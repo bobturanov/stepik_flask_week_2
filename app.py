@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-    print(tours)
     return render_template('index.html', title=title, subtitle=subtitle, description=description, departures=departures,
                            tours=dict(itertools.islice(tours.items(), 6)))
 
@@ -47,13 +46,12 @@ def render_tours(num_id):
 
 @app.errorhandler(404)
 def render_not_found(error):
-    print(error)
-    return "Ничего не нашлось! Вот неудача, отправляйтесь на главную!"
+    return f'Ничего не нашлось! Вот неудача, отправляйтесь на главную!\n{error}'
 
 
 @app.errorhandler(500)
 def render_server_error(error):
-    return "Что-то не так, но мы все починим:\n{}".format(error.original_exception), 500
+    return 'Что-то не так, но мы все починим:\n{}'.format(error.original_exception), 500
 
 
 if __name__ == '__main__':
