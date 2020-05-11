@@ -40,7 +40,7 @@ def render_tours(num_id):
     tour = tours[int(num_id)]
     stars = '★' * int(tour['stars'])
     departure = departures[tour['departure']]
-    return render_template("tour.html", title=title, departure=departure, tour=tour, departures=departures,
+    return render_template('tour.html', title=title, departure=departure, tour=tour, departures=departures,
                            stars=stars)
 
 
