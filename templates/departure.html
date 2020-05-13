@@ -2,7 +2,7 @@
 {% block container %}
   <main class="container mt-3">
     <h1 class="display-5 mt-4">Летим {{departures[departure_id][0]|lower}}{{departures[departure_id][1:] }}</h1>
-    <p class="mb-4">Найдено {{tours|length}} туров, от {{tours_info.min_price}} до {{tours_info.max_price}} и от {{tours_info.min_nights}} ночей до
+    <p class="mb-4">Найдено {{tours|length}} тура, от {{tours_info.min_price}} до {{tours_info.max_price}} и от {{tours_info.min_nights}} ночей до
       {{tours_info.max_nights}} ночей</p>
     <!-- CARDS -->
     <div class="row mt-5">
